@@ -92,6 +92,7 @@ if [ -n "${BASH_VERSION}" ]; then
         local background_purple='\e[45m'
         local background_cyan='\e[46m'
         local background_white='\e[47m'
+        local background_default='\e[49m'
 
         local reset='\e[0m'     # Text Reset]'
 
@@ -102,6 +103,7 @@ if [ -n "${BASH_VERSION}" ]; then
         local black_on_red="${black}${background_red}"
         local white_on_red="${white}${background_red}"
         local yellow_on_red="${yellow}${background_red}"
+        local red_on_default="${red}${background_default}"
 
 
         # Flags
@@ -161,7 +163,7 @@ if [ -n "${BASH_VERSION}" ]; then
                 fi
             fi
             prompt+=$(enrich_append ${is_on_a_tag} "${omg_is_on_a_tag_symbol} ${tag_at_current_commit}" "${black_on_red}")
-            prompt+="${reset}${background_red}${omg_last_symbol}${reset}\n"
+            prompt+="${reset}${red_on_default}${omg_last_symbol}${reset}\n"
             prompt+="$(eval_prompt_callback_if_present)"
             prompt+="${omg_second_line}"
         else
