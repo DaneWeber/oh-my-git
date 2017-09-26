@@ -161,7 +161,7 @@ if [ -n "${BASH_VERSION}" ]; then
                 fi
             fi
             prompt+=$(enrich_append ${is_on_a_tag} "${omg_is_on_a_tag_symbol} ${tag_at_current_commit}" "${black_on_red}")
-            prompt+="${reset}${red}${omg_last_symbol}${reset}\n"
+            prompt+="${reset}${background_red}${omg_last_symbol}${reset}\n"
             prompt+="$(eval_prompt_callback_if_present)"
             prompt+="${omg_second_line}"
         else
